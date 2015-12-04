@@ -1,9 +1,11 @@
-$ git config
+$ git config : query/set/replace options
 
-$ git clone
+$ git init <project name> : new local repo w/ specified name
 
-$ git add
+$ git clone <url> : downloads project along with version history
 
-$ git commit
+$ git add <file> : snapshot of file before committing
 
-$ git push
+$ git commit -m "<message>" : records snapshot of file in its version history
+
+$ git push <alias> <branch> : uploads local changes to specific branch to GitHub
