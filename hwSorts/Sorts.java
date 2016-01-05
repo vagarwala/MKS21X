@@ -34,22 +34,23 @@ public class Sorts{
         }
     }
 
-    public static void bubbleSort(int[] arr){
-        int j;
-        boolean flag = true;   // set flag to true to begin first pass
-        int temp;   //holding variable
-        while ( flag ){
-            flag= false;    //set flag to false awaiting a possible swap
-            for(j=0;  j < num.length -1;  j++ ){
-               if ( num[ j ] > num[j+1] ){
-                    temp = num[ j ];                //swap elements
-                    num[ j ] = num[ j+1 ];
-                    num[ j+1 ] = temp;
-                    flag = true;              //shows a swap occurred
+    public void bubbleSort(int[] arr) {
+        boolean swapped = true;
+        int j = 0;
+        int tmp;
+        while (swapped) {
+            swapped = false;
+            j++;
+            for (int i = 0; i < arr.length - j; i++) {                                       
+                if (arr[i] > arr[i + 1]) {                          
+                    tmp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = tmp;
+                    swapped = true;
                 }
             }
         }
-    } 
+    }
 
     public static void fillRandom(int[] data){
         Random rand = new Random();
