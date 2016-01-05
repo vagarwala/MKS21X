@@ -20,7 +20,7 @@ public class Sorts{
         }
     }
 
-    public static int[] selectionSort(int[] arr){
+    public static void selectionSort(int[] arr){
         for (int i = 0; i < arr.length - 1; i++){
             int index = i;
             for (int j = i + 1; j < arr.length; j++){
@@ -32,8 +32,24 @@ public class Sorts{
             arr[index] = arr[i];
             arr[i] = smallerNumber;
         }
-        return arr;
     }
+
+    public static void bubbleSort(int[] arr){
+        int j;
+        boolean flag = true;   // set flag to true to begin first pass
+        int temp;   //holding variable
+        while ( flag ){
+            flag= false;    //set flag to false awaiting a possible swap
+            for(j=0;  j < num.length -1;  j++ ){
+               if ( num[ j ] > num[j+1] ){
+                    temp = num[ j ];                //swap elements
+                    num[ j ] = num[ j+1 ];
+                    num[ j+1 ] = temp;
+                    flag = true;              //shows a swap occurred
+                }
+            }
+        }
+    } 
 
     public static void fillRandom(int[] data){
         Random rand = new Random();
