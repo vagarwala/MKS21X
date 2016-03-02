@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.lang.*;
 public class Sorts{
 	public static void printArray(int[] data){
 		String res = "[";
@@ -50,6 +51,39 @@ public class Sorts{
                 }
             }
         }
+    }
+
+    public static void mergeSort(int [] list) {
+        if (list.length > 1) {
+        int[] first = new int[list.length / 2];
+        int[] second = new int[list.length - first.length];
+        System.arraycopy(list, 0, first, 0, first.length);
+        System.arraycopy(list, first.length, second, 0, second.length);
+
+        mergeSort(first);
+        mergeSort(second);
+
+        merge(first, second, list);
+    }
+    }
+    
+    private static void merge(int[] first, int[] second, int [] result) {
+        int i1 = 0;
+        int i2 = 0;
+        
+        int j = 0;
+        while (i1 < first.length && i2 < second.length) {
+            if (first[i1] < second[i2]) {
+                result[j] = first[i1];
+                i1++;
+                } else {
+                result[j] = second[i2];
+                i2++;
+            }
+            j++;
+        }
+        System.arraycopy(first, i1, result, j, first.length - i1);
+        System.arraycopy(second, i2, result, j, second.length - i2);
     }
 
     public static void fillRandom(int[] data){
